@@ -1,0 +1,5 @@
+expanding_textareas.settings:
+  title: 'Expanding Textareas'
+  description: 'Administrative configurations for expanding textareas'
+  route_name: expanding_textareas.settings
+  parent: system.admin_config_ui

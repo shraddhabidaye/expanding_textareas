@@ -1,0 +1,7 @@
+expanding:
+  version: 1.x
+  js:
+    js/expanding.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

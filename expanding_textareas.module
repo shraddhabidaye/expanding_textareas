@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * A simple plugin that turns properly text area into auto expanding textarea.
+ */
+
+use Drupal\expanding_textareas\ExpandingTextareasElementRender;
+
+/**
+ * Implements hook_libraries_info_file_paths().
+ */
+function expanding_textareas_libraries_info_file_paths() {
+  return [drupal_get_path('module', 'expanding_textareas') . '/js/expanding.js'];
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function expanding_textareas_element_info_alter(&$types) {
+  $types['textarea']['#pre_render'][] = [ExpandingTextareasElementRender::class, 'preRenderTextFormat'];
+  $types['text_format']['#pre_render'][] = [ExpandingTextareasElementRender::class, 'preRenderTextFormat'];
+}
